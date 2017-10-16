@@ -22,9 +22,30 @@
           3. West Line
           4. MRTS Line       
           
-         1. South Line:
-                This is starts from Chennai Beach to Chengalpattu/Tirumalpur via Tambaram. The train services starts at
+         1. South Line:                
+               Chennai Beach to Tambaram(week days) The train services starts on 03:55 at Chennai Beach and ends on 23.59.
+               Chennai Beach to Tambaram(Sundays) The train services starts on 03:55 at Chennai Beach and ends on 23.59.
+               Tambaram to Chennai Beach(Week Days) The train services starts on 04:00 at Chennai Beach and ends on 23.55.
+               Tambaram to Chennai Beach(Sundays) The train services starts on 04:00 at Chennai Beach and ends on 23.55.
+               Tambaram to Chengalpattu(Week days) The train services starts on 04:50 at Chennai Beach and ends on 23.40.
+               Tambaram to Chengalpattu(Sundays) The train services starts on 04:50 at Chennai Beach and ends on 23.40.
+               Chengalpattu to Tambaram(Week days) The train services starts on 03:55 at Chennai Beach and ends on 23.10.
+               Chengalpattu to Tambaram(Sundays) The train services starts on 03:55 at Chennai Beach and ends on 23.10.
+               Chengalpattu to Tirumalpur(Week Days) The train services starts on 07:25 at Chennai Beach and ends on 21:55.
+               Chengalpattu to Tirumalpur(Sundays) The train services starts on 08:45 at Chennai Beach and ends on 17:10.
+               Tirumalpur to Chengalpattu(Week Days) The train services starts on 05:15 at Chennai Beach and ends on 17:10.
+               Tirumalpur to Chengalpattu(Sundays) The train services starts on 05:15 at Chennai Beach and ends on 17:10.
+               
+             Functionality:
+             
+             1. When user clicks local train menu, the app would display three sub module STATION, S(source) to D(Destination) and FARE.
+             2. By default, it should display the STATION sub menu and it asks the user to enter source and destination station name. Destination is pop up where it should display as "To Destination, or any Main station like Guindy or Tambaram.
+             3. Then the S to D timings should be displayed to user in the next menu by showing current mobile date time and next.
+             
+               
+               
                 
                 
+
 
 
