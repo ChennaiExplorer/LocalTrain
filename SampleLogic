@@ -1,0 +1,203 @@
+This is Java file has logic to show about Route1 and ROute2 way and stations.
+
+package tests;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+public class TrainStns {
+
+	LinkedHashMap<Integer, String> LinkedHashMap = new LinkedHashMap<Integer, String>();
+
+	public static void main(String a[]) {
+
+		List<String> list = new ArrayList<String>();
+
+		list.add("Chennai Beach");
+		list.add("Chennai Fort");
+		list.add("Chennai Park");
+		list.add("Chennai Egmore");
+		list.add("Chetpat");
+		list.add("Nungampakkam");
+		list.add("Kodampakkam");
+		list.add("Mambalam");
+		list.add("Saidapet");
+		list.add("Guindy");
+		list.add("St. Thomas Mount");
+		list.add("Pazhavanthangal");
+		list.add("Menampakkam");
+		list.add("Tirusulam");
+		list.add("Pallavaram");
+		list.add("Chrompet");
+		list.add("Tambaram sanatorium");
+		list.add("Tambaram");
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter depature station name");
+		String deptStn = sc.nextLine();
+		System.out.println("Enter arrival station name");
+		String arrStn = sc.nextLine();
+
+		TrainStns trnStns = new TrainStns();
+		trnStns.RouteCheckerAndRetriver(deptStn, arrStn);
+
+		int deptStnNo = 0, arrStnNo = 0;
+
+		/*
+		 * for (int i = 0; i < list.size(); i++) { if
+		 * (list.get(i).equalsIgnoreCase(deptStn)) { deptStnNo = i;
+		 * System.out.println("deptStnNo"+i);
+		 * 
+		 * } if (list.get(i).equalsIgnoreCase(arrStn)) { arrStnNo = i;
+		 * System.out.println("arrStnNo"+i);
+		 * 
+		 * } } for (int i = deptStnNo; i <= arrStnNo; i++) {
+		 * System.out.println(list.get(i)); }
+		 */
+
+	}
+
+	private LinkedHashMap<Integer, String> RouteCheckerAndRetriver(String deptStn, String arrStn) {
+
+		LinkedHashMap<Integer, String> route1 = new LinkedHashMap<Integer, String>();
+
+		LinkedHashMap<Integer, String> route2 = new LinkedHashMap<Integer, String>();
+
+		LinkedHashMap<Integer, String> retriveRoute = new LinkedHashMap<Integer, String>();
+
+		route1.put(1, "Chennai Beach");
+		route1.put(2, "Chennai Fort");
+		route1.put(3, "Chennai Park");
+		route1.put(4, "Chennai Egmore");
+		route1.put(5, "Chetpat");
+		route1.put(6, "Nungampakkam");
+		route1.put(7, "Kodampakkam");
+		route1.put(8, "Mambalam");
+		route1.put(9, "Saidapet");
+		route1.put(10, "Guindy");
+		route1.put(11, "St. Thomas Mount");
+		route1.put(12, "Pazhavanthangal");
+		route1.put(13, "Menampakkam");
+		route1.put(14, "Tirusulam");
+		route1.put(15, "Pallavaram");
+		route1.put(16, "Chrompet");
+		route1.put(17, "Tambaram Sanatorium");
+		route1.put(18, "Tambaram");
+
+		route2.put(1, "Tambaram");
+		route2.put(2, "Tambaram Sanatorium");
+		route2.put(3, "Chrompet");
+		route2.put(4, "Pallavaram");
+		route2.put(5, "Tirusulam");
+		route2.put(6, "Menampakkam");
+		route2.put(7, "Pazhavanthangal");
+		route2.put(8, "St. Thomas Mount");
+		route2.put(9, "Guindy");
+		route2.put(10, "Saidapet");
+		route2.put(11, "Mambalam");
+		route2.put(12, "Kodampakkam");
+		route2.put(13, "Nungampakkam");
+		route2.put(14, "Chetpat");
+		route2.put(15, "Chennai Egmore");
+		route2.put(16, "Chennai Park");
+		route2.put(17, "Chennai Fort");
+		route2.put(18, "Chennai Beach");
+
+		int deptStnNo = 0, arrStnNo = 0;
+
+		for (Entry<Integer, String> entry : route1.entrySet()) {
+			if (deptStn.equals(entry.getValue())) {
+				System.out.print(
+						" Depature Name ::: " + entry.getValue() + ":: Depature Station Number ::" + entry.getKey());
+				deptStnNo = entry.getKey();
+
+			}
+
+			if (arrStn.equals(entry.getValue())) {
+				arrStnNo = entry.getKey();
+				System.out
+						.print("Arrival Name " + entry.getValue() + " :: Arrival Station Number :: " + entry.getKey());
+
+			}
+		}
+
+		System.out.println();
+		System.out.println("DeptStnNo : " + deptStnNo + " ArrStnNo : " + arrStnNo);
+
+		if (deptStnNo > arrStnNo) {
+
+			System.out.println("Route 2");
+
+			int routeDeptNo = 0, routeArrNo = 0;
+
+			@SuppressWarnings("rawtypes")
+			LinkedList values = new LinkedList<>(route2.values());
+
+			LinkedList<Integer> keys = new LinkedList<>(route2.keySet());
+
+			for (int i = 0; i < values.size(); i++) {
+				if (deptStn.equals(values.get(i))) {
+					routeDeptNo = (int) keys.get(i);
+					// System.out.println("deptStn ::::::::::::"+deptStn+ "routeArrNo
+					// ::::::"+routeDeptNo);
+
+				}
+
+				if (arrStn.equals(values.get(i))) {
+					routeArrNo = (int) keys.get(i);
+					// System.out.println("arrStn ::::::::::::"+arrStn+" routeArrNo
+					// :::::"+routeArrNo);
+
+				}
+			}
+
+			for (int i = routeDeptNo - 1; i < routeArrNo; i++) {
+				System.out.println(values.get(i));
+			}
+
+		}
+
+		if (deptStnNo < arrStnNo) {
+			System.out.println("Route 1");
+			
+			int routeDeptNo = 0, routeArrNo = 0;
+
+			@SuppressWarnings("rawtypes")
+			LinkedList values = new LinkedList<>(route1.values());
+
+			LinkedList<Integer> keys = new LinkedList<>(route1.keySet());
+
+			for (int i = 0; i < values.size(); i++) {
+				if (deptStn.equals(values.get(i))) {
+					routeDeptNo = (int) keys.get(i);
+					// System.out.println("deptStn ::::::::::::"+deptStn+ "routeArrNo
+					// ::::::"+routeDeptNo);
+
+				}
+
+				if (arrStn.equals(values.get(i))) {
+					routeArrNo = (int) keys.get(i);
+					// System.out.println("arrStn ::::::::::::"+arrStn+" routeArrNo
+					// :::::"+routeArrNo);
+
+				}
+			}
+
+			for (int i = routeDeptNo - 1; i < routeArrNo; i++) {
+				System.out.println(values.get(i));
+			}
+			
+
+		}
+
+		return null;
+
+	}
+
+}
